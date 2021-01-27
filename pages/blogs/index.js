@@ -5,18 +5,18 @@ import Link from 'next/link'
 import Date from '../../components/date'
 
 /* Get static props */
-import { getSortedPostsData } from '../../lib/posts'
+import { getSortedPostsData } from '../../lib/blogs'
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const allBlogsData = getSortedPostsData()
   return {
     props: {
-      allPostsData
+      allBlogsData
     }
   }
 }
 
-export default function posts({ allPostsData }) {
+export default function posts({ allBlogsData }) {
   return (
     <Layout home>
       {/* Keep the existing code here */}
@@ -25,9 +25,9 @@ export default function posts({ allPostsData }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
+          {allBlogsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-            <Link href={`/posts/${id}`}>
+            <Link href={`/blogs/${id}`}>
               <a>{title}</a>
             </Link>
             <br />

@@ -5,7 +5,7 @@ import { useState } from 'react'
 // import Router from 'next/router';
 import { useRouter } from 'next/router';
 
-function recipies({ data, page }) {
+function articles({ data, page }) {
 
     const router = useRouter();
     console.log(router.query.recipies);
@@ -53,4 +53,4 @@ export async function getServerSideProps({ query: {page=1 } }) {
     }
 }
 
-export default recipies
+export default articles

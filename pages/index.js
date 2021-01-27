@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Date from '../components/date'
 
 /* Get static props */
-import { getSortedPostsData } from '../lib/posts'
+import { getSortedPostsData } from '../lib/blogs'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -27,7 +27,7 @@ export default function Home({ allPostsData }) {
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-            <Link href={`/posts/${id}`}>
+            <Link href={`/blogs/${id}`}>
               <a>{title}</a>
             </Link>
             <br />
@@ -41,20 +41,3 @@ export default function Home({ allPostsData }) {
     </Layout>
   )
 }
-
-/* export default function Home() {
-  return (
-    <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={utilStyles.headingMd}>
-        <p>That’s it! We now have the polished layout code in place to move onto our data fetching lessons.</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-    </Layout>
-  )
-} */

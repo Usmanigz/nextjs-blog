@@ -9,11 +9,11 @@ const Nav =() => (
         <Link href="/about">
             <a className={styles.nav}>About</a>
         </Link>
-        <Link href="/posts">
-            <a className={styles.nav}>Blog</a>
+        <Link href="/blogs">
+            <a className={styles.nav}>Blogs</a>
         </Link>
-        <Link href="/recipies">
-            <a className={styles.nav}>Recipies</a>
+        <Link href="/articles">
+            <a className={styles.nav}>Articles</a>
         </Link>
     </nav>
 );
